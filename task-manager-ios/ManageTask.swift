@@ -46,19 +46,19 @@ final class TaskManager {
         return tasks.count
 
     }
-    func checkComplete(game: Tasks) {
+    func checkComplete(task: Tasks) {
         try! realm.write {
-            if Tasks.completed {
-                Tasks.completed = true
-                Tasks.dueDate = calendar.date(byAdding: .day, value: 3, to: Date())!
+            if task.completed {
+            task.completed = true
+                task.dueDate = calendar.date(byAdding: .day, value: 3, to: Date())!
             } else {
-                Tasks.completed = true
-                Tasks.dueDate = Date()
+                task.completed = false
+                task.dueDate = Date()
             }
-        }
     }
 
     
 
 
+    }
 }

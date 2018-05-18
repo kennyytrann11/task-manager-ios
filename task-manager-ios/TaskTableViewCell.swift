@@ -14,13 +14,15 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskDescription: UILabel!
     @IBOutlet weak var taskCompleted: UILabel!
-    @IBOutlet weak var editTask: UIButton!
-    @IBOutlet weak var removeTask: UIButton!
+    @IBOutlet weak var dateDue: UILabel!
     
+    var dateString = Date().toString(dateFormat: "yyyy/MMM/dd HH:mm:ss")
     
     func setUpCell(task: Tasks) {
         taskName.text = task.name
         taskDescription.text = task.desc
+        dateString = task.dueDate.toString(dateFormat: "yyyy/MMM/dd")
+        dateDue.text = dateString
         if task.completed == true {
             taskCompleted.text = "FINISHED"
         } else {
@@ -28,15 +30,6 @@ class TaskTableViewCell: UITableViewCell {
         }
         
     }
-    
-    @IBAction func editTaskButton(_ sender: Any) {
-        
-    }
-    
-    @IBAction func removeTaskButton(_ sender: Any) {
-        
-    }
-    
     
     
 }

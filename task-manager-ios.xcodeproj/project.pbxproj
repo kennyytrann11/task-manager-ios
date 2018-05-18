@@ -17,6 +17,7 @@
 		D687010620A386E4005ADBC0 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687010520A386E4005ADBC0 /* TaskTableViewCell.swift */; };
 		D687010820A38A13005ADBC0 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687010720A38A13005ADBC0 /* AddTaskViewController.swift */; };
 		D687010A20A4C4DB005ADBC0 /* ManageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687010920A4C4DB005ADBC0 /* ManageTask.swift */; };
+		D687010E20AE002D005ADBC0 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687010D20AE002D005ADBC0 /* DateFormatting.swift */; };
 		E221413A8BD6CD5D2BDE5A1A /* Pods_task_manager_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123FBC943692E4AA148ADD3F /* Pods_task_manager_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		D687010520A386E4005ADBC0 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		D687010720A38A13005ADBC0 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		D687010920A4C4DB005ADBC0 /* ManageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTask.swift; sourceTree = "<group>"; };
+		D687010D20AE002D005ADBC0 /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				D67C3BA120A3714A00E9C2FE /* ViewController.swift */,
 				D687010720A38A13005ADBC0 /* AddTaskViewController.swift */,
 				D687010520A386E4005ADBC0 /* TaskTableViewCell.swift */,
+				D687010D20AE002D005ADBC0 /* DateFormatting.swift */,
 				D687010320A37FED005ADBC0 /* Tasks.swift */,
 				D687010920A4C4DB005ADBC0 /* ManageTask.swift */,
 				D67C3BA320A3714A00E9C2FE /* Main.storyboard */,
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D687010E20AE002D005ADBC0 /* DateFormatting.swift in Sources */,
 				D687010420A37FED005ADBC0 /* Tasks.swift in Sources */,
 				D687010820A38A13005ADBC0 /* AddTaskViewController.swift in Sources */,
 				D67C3BA220A3714A00E9C2FE /* ViewController.swift in Sources */,

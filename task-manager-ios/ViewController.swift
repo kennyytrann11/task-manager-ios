@@ -20,6 +20,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         taskTableView.reloadData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        taskTableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -32,14 +37,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell") as!
         TaskTableViewCell
-        cell.setUpCell(task: <#Tasks#>)
+        cell.setUpCell(task: TaskManager.sharedInstance.getTask(index: indexPath.row))
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let task = TaskManager.sharedInstance.getTask(index: indexPath.row)
+        let title = task.completed ? "Done" : "Not Done"
+        let checkCompletedAction = UITableViewRowAction(style: .normal, title: title) { (_, _) in
+            let cellForIndex = tableView.cellForRow(at: indexPath) as! TaskTableViewCell
+            TaskManager.sharedInstance.checkComplete(task: task)
+            tableView.deselectRow(at: indexPath, animated: true)
+            tableView.reloadData()
+        }
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (_, _) in
+            TaskManager.sharedInstance.removeTask(task)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+        }
+        return [deleteAction, checkCompletedAction]    }
+    
+ 
+    @IBAction func unwindToLibrary(segue: UIStoryboardSegue) {
+        
+    }
 
 }
 
