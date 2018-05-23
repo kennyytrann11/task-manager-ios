@@ -15,6 +15,7 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskDescription: UILabel!
     @IBOutlet weak var taskCompleted: UILabel!
     @IBOutlet weak var dateDue: UILabel!
+    @IBOutlet weak var isCompleted: UILabel!
     
     var dateString = Date().toString(dateFormat: "yyyy/MMM/dd HH:mm:ss")
     
@@ -26,7 +27,7 @@ class TaskTableViewCell: UITableViewCell {
         if task.completed == true {
             taskCompleted.text = "FINISHED"
         } else {
-            taskCompleted.text = "Due in"
+            taskCompleted.text = "Finish by"
         }
         
     }

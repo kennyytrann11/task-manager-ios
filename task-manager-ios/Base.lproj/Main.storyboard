@@ -36,14 +36,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0T-bW-BJ4">
-                                                    <rect key="frame" x="15" y="36" width="243" height="53"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0T-bW-BJ4">
+                                                    <rect key="frame" x="15" y="40" width="260" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="completed?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpw-QC-Jct">
-                                                    <rect key="frame" x="263" y="10" width="90" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due on" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpw-QC-Jct">
+                                                    <rect key="frame" x="298" y="10" width="55" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -62,8 +63,6 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="jRM-gg-qw8" secondAttribute="bottom" constant="38" id="WMV-9O-YbJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="Lpw-QC-Jct" secondAttribute="trailing" constant="22" id="XbQ-0m-VX0"/>
                                                 <constraint firstItem="Lpw-QC-Jct" firstAttribute="top" secondItem="ypQ-on-DxC" secondAttribute="top" constant="10" id="gQT-Y0-eyj"/>
-                                                <constraint firstItem="U0T-bW-BJ4" firstAttribute="leading" secondItem="ypQ-on-DxC" secondAttribute="leadingMargin" id="ob0-uP-w0d"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="U0T-bW-BJ4" secondAttribute="bottom" constant="9" id="yj2-rt-8Kg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -86,7 +85,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Task Manager" id="dpU-Rp-u5F">
-                        <barButtonItem key="leftBarButtonItem" title="Filter" id="DJR-NK-bCw"/>
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="DJR-NK-bCw">
+                            <connections>
+                                <action selector="filterButton:" destination="BYZ-38-t0r" id="Ssg-Yr-40I"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Task" id="x3r-AH-E0r">
                             <connections>
                                 <segue destination="Mtg-Fz-WU3" kind="show" id="kZE-yV-k4G"/>
@@ -145,7 +148,7 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIN-2E-skj">
-                                <rect key="frame" x="143" y="514" width="88" height="30"/>
+                                <rect key="frame" x="143" y="505" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Save"/>

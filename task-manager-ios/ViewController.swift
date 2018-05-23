@@ -45,12 +45,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 100
     }
     
+    @IBAction func filterButton(_ sender: Any) {
+        
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let task = TaskManager.sharedInstance.getTask(index: indexPath.row)
-        let title = task.completed ? "Done" : "Not Done"
+        var title = task.completed ? "Done" : "Not Done"
+        let isComplete = task.completed
         let checkCompletedAction = UITableViewRowAction(style: .normal, title: title) { (_, _) in
             let cellForIndex = tableView.cellForRow(at: indexPath) as! TaskTableViewCell
             TaskManager.sharedInstance.checkComplete(task: task)
+            TaskManager.sharedInstance.completed(task)
+            if isComplete == true {
+                title = "Done"
+            } else {
+                title = "Not Done"
+            }
             tableView.deselectRow(at: indexPath, animated: true)
             tableView.reloadData()
         }

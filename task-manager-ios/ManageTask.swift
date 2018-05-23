@@ -46,6 +46,17 @@ final class TaskManager {
         return tasks.count
 
     }
+    
+    func completed(_ task: Tasks) {
+        try! realm.write {
+            if task.completed == true {
+                task.completed = false
+            } else {
+                task.completed = true
+            }
+        }
+    }
+    
     func checkComplete(task: Tasks) {
         try! realm.write {
             if task.completed {
